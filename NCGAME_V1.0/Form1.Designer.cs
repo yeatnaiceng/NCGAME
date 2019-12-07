@@ -34,6 +34,7 @@
             this.Player2_Button = new System.Windows.Forms.Button();
             this.Map_Button = new System.Windows.Forms.Button();
             this.StartGame_Button = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,12 +86,20 @@
             this.StartGame_Button.Text = "Start Game";
             this.StartGame_Button.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(606, 254);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.StartGame_Button);
             this.Controls.Add(this.Map_Button);
             this.Controls.Add(this.Player2_Button);
@@ -100,6 +109,7 @@
             this.Text = "RPG Game";
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -110,6 +120,7 @@
         private System.Windows.Forms.Button Player2_Button;
         private System.Windows.Forms.Button Map_Button;
         private System.Windows.Forms.Button StartGame_Button;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

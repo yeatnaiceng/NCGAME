@@ -14,11 +14,14 @@ namespace NCGAME_V1._0
 {
     public partial class Form1 : Form
     {
-  
+        Player P1 = new Player(1);
+        Player P2 = new Player(2);
+        Maps Map1 = new Maps();
         WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer player2 = new WMPLib.WindowsMediaPlayer();
         public Form1()
         {
+           
             InitializeComponent();
             axWindowsMediaPlayer1.Hide();
             player.URL = "OP1-＊～アスタリスク～／ORANGE RANGE.m4a";
@@ -26,7 +29,9 @@ namespace NCGAME_V1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            CharacterSelectionForm CharacterSelection = new CharacterSelectionForm();
+            CharacterSelection.Show();
         }
 
         private void axWindowsMediaPlayer1_Enter(object sender, EventArgs e)
@@ -36,7 +41,8 @@ namespace NCGAME_V1._0
 
         private void Player2_Button_Click(object sender, EventArgs e)
         {
-
+            P2.Name = textBox1.Text;
+            Player2_Button.Text = P2.Name;
         }
     }
 }
