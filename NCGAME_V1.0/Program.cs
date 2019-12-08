@@ -17,9 +17,6 @@ namespace NCGAME_V1._0
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            Player P1 = new Player(1);
-            Player P2 = new Player(2);
-            Maps Map1 = new Maps();
             
         }
     }

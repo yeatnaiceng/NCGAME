@@ -50,7 +50,7 @@ namespace NCGAME_V1._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            MapSize_Label.Text = "Map Size : " + Map1.XSize + " x " + Map1.YSize;
         }
 
         private void Map_Button_Click(object sender, EventArgs e)
@@ -110,6 +110,44 @@ namespace NCGAME_V1._0
             }
             if (P1.CharacterChosen.CharacterName == "魔法使い")
                 CharacterSkillSound.URL = "エクスぷローション.wav";
+        }
+
+        private void StartGame_Button_Click(object sender, EventArgs e)
+        {
+            if (P1.CharacterChosen == null)
+            {
+                MessageBox.Show("Player 1 Please Choose Your Character");
+                return;
+            }
+            if (P2.CharacterChosen == null)
+            {
+                MessageBox.Show("Player 2 Please Choose Your Character");
+                return;
+            }
+            GameStartedForm Game1 = new GameStartedForm(P1,P2,Map1);
+            Game1.Show();
+        }
+
+        private void Player2_CharacterS3Voice_Button_Click(object sender, EventArgs e)
+        {
+            if (P1.CharacterChosen == null)
+            {
+                MessageBox.Show("Player 1 Please Choose Your Character");
+                return;
+            }
+            if (P1.CharacterChosen.CharacterName == "魔法使い")
+                CharacterSkillSound.URL = "エクスぷローション.wav";
+        }
+
+        private void Player2_CharacterS1Voice_Button_Click(object sender, EventArgs e)
+        {
+            if (P1.CharacterChosen == null)
+            {
+                MessageBox.Show("Player 1 Please Choose Your Character");
+                return;
+            }
+            if (P1.CharacterChosen.CharacterName == "魔法使い")
+                CharacterSkillSound.URL = "火遁・炎弾.wav";
         }
     }
 }

@@ -136,5 +136,11 @@ namespace NCGAME_V1._0
 		public void DebuffEffect()
 		{
 		}
+
+		public void InitialisedState()
+		{
+			_hp = _characterChosen.HpState;
+			_mp = _characterChosen.MpState;
+		}
 	}
 }

@@ -51,6 +51,7 @@
             this.Player2_CharacterS2Voice_Button = new System.Windows.Forms.Button();
             this.Player1_CharacterS3Voice_Button = new System.Windows.Forms.Button();
             this.Player2_CharacterS3Voice_Button = new System.Windows.Forms.Button();
+            this.MapSize_Label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,6 +104,7 @@
             this.StartGame_Button.TabIndex = 4;
             this.StartGame_Button.Text = "Start Game";
             this.StartGame_Button.UseVisualStyleBackColor = false;
+            this.StartGame_Button.Click += new System.EventHandler(this.StartGame_Button_Click);
             // 
             // Player1_Name_Label
             // 
@@ -224,6 +226,7 @@
             this.Player2_CharacterS1Voice_Button.TabIndex = 18;
             this.Player2_CharacterS1Voice_Button.Text = "Skill 1";
             this.Player2_CharacterS1Voice_Button.UseVisualStyleBackColor = true;
+            this.Player2_CharacterS1Voice_Button.Click += new System.EventHandler(this.Player2_CharacterS1Voice_Button_Click);
             // 
             // Player1_CharacterS2Voice_Button
             // 
@@ -261,6 +264,16 @@
             this.Player2_CharacterS3Voice_Button.TabIndex = 22;
             this.Player2_CharacterS3Voice_Button.Text = "Skill 3";
             this.Player2_CharacterS3Voice_Button.UseVisualStyleBackColor = true;
+            this.Player2_CharacterS3Voice_Button.Click += new System.EventHandler(this.Player2_CharacterS3Voice_Button_Click);
+            // 
+            // MapSize_Label
+            // 
+            this.MapSize_Label.AutoSize = true;
+            this.MapSize_Label.Location = new System.Drawing.Point(505, 340);
+            this.MapSize_Label.Name = "MapSize_Label";
+            this.MapSize_Label.Size = new System.Drawing.Size(78, 17);
+            this.MapSize_Label.TabIndex = 23;
+            this.MapSize_Label.Text = "Map Size : ";
             // 
             // Form1
             // 
@@ -268,6 +281,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1050, 571);
+            this.Controls.Add(this.MapSize_Label);
             this.Controls.Add(this.Player2_CharacterS3Voice_Button);
             this.Controls.Add(this.Player1_CharacterS3Voice_Button);
             this.Controls.Add(this.Player2_CharacterS2Voice_Button);
@@ -323,6 +337,7 @@
         private System.Windows.Forms.Button Player2_CharacterS2Voice_Button;
         private System.Windows.Forms.Button Player1_CharacterS3Voice_Button;
         private System.Windows.Forms.Button Player2_CharacterS3Voice_Button;
+        private System.Windows.Forms.Label MapSize_Label;
     }
 }
 
