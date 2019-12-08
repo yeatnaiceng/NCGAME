@@ -77,8 +77,24 @@ namespace NCGAME_V1._0
 			get { return _equipWeapon; }
 			set { _equipWeapon = value; }
 		}
-		public void ChooseCharacter()
+		public void ChooseCharacter(int characterIndex)
 		{
+			if(characterIndex==1)
+			{
+				Warrior warrior = new Warrior();
+				_characterChosen = warrior;
+			}
+			else if(characterIndex==2)
+			{
+				Magician magician = new Magician();
+				_characterChosen = magician;
+			}
+			else if (characterIndex==3)
+			{
+				Ninja ninja = new Ninja();
+				_characterChosen = ninja;
+			}
+				
 		}
 		public void Attack()
 		{

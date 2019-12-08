@@ -19,7 +19,7 @@ namespace NCGAME_V1._0
         Maps Map1 = new Maps();
         string abc = "Hello";
         WMPLib.WindowsMediaPlayer player = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer player2 = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer CharacterSkillSound = new WMPLib.WindowsMediaPlayer();
         public Form1()
         {
            
@@ -55,7 +55,61 @@ namespace NCGAME_V1._0
 
         private void Map_Button_Click(object sender, EventArgs e)
         {
-            textBox1.Text = P1.Name;
+            
+        }
+
+        private void Refresh_Button_Click(object sender, EventArgs e)
+        {
+            if (P1.CharacterChosen == null)
+            {
+                MessageBox.Show("Please Select Player 1 Character");
+            }
+            else
+            {
+                Player1_Name_Label.Text = "Name : " + P1.Name;
+                Player1_Character_Label.Text = "Character : " + P1.CharacterChosen.CharacterName;
+                Player1_CharacterS1_Label.Text = "Skill 1 : " + P1.CharacterChosen.NameSkill1;
+                Player1_CharacterS2_Label.Text = "Skill 2 : " + P1.CharacterChosen.NameSkill2;
+                Player1_CharacterS3_Label.Text = "Skill 3 : " + P1.CharacterChosen.NameSkill3;
+            }
+            if (P2.CharacterChosen == null)
+                MessageBox.Show("Please Select Player 2 Character");
+            else
+            {
+                Player2_Name_Label.Text = "Name : " + P2.Name;
+                Player2_Character_Label.Text = "Character : " + P2.CharacterChosen.CharacterName;
+                Player2_CharacterS1_Label.Text = "Skill 1 : " + P2.CharacterChosen.NameSkill1;
+                Player2_CharacterS2_Label.Text = "Skill 2 : " + P2.CharacterChosen.NameSkill2;
+                Player2_CharacterS3_Label.Text = "Skill 3 : " + P2.CharacterChosen.NameSkill3;
+            }
+        }
+
+        private void Player1_CharacterS1_Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Player1_CharacterS1Voice_Button_Click(object sender, EventArgs e)
+        {
+            if (P1.CharacterChosen == null)
+            {
+                MessageBox.Show("Player 1 Please Choose Your Character");
+                return;
+            }
+            if (P1.CharacterChosen.CharacterName == "魔法使い")
+                CharacterSkillSound.URL= "火遁・炎弾.wav";
+            
+        }
+
+        private void Player1_CharacterS3Voice_Button_Click(object sender, EventArgs e)
+        {
+            if (P1.CharacterChosen == null)
+            {
+                MessageBox.Show("Player 1 Please Choose Your Character");
+                return;
+            }
+            if (P1.CharacterChosen.CharacterName == "魔法使い")
+                CharacterSkillSound.URL = "エクスぷローション.wav";
         }
     }
 }

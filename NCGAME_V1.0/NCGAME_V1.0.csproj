@@ -66,6 +66,13 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameStarted.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GameStarted.Designer.cs">
+      <DependentUpon>GameStarted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Magician.cs" />
     <Compile Include="Maps.cs" />
     <Compile Include="Ninja.cs" />
     <Compile Include="Obstacle.cs" />
@@ -74,6 +81,7 @@
     <Compile Include="PotionN.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Warrior.cs" />
     <Compile Include="WeaponType.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
