@@ -76,6 +76,7 @@
             this.Map_Button.TabIndex = 3;
             this.Map_Button.Text = "Map";
             this.Map_Button.UseVisualStyleBackColor = true;
+            this.Map_Button.Click += new System.EventHandler(this.Map_Button_Click);
             // 
             // StartGame_Button
             // 

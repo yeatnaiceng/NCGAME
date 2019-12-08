@@ -30,9 +30,9 @@ namespace NCGAME_V1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
            
-            PlayerSettingForm CharacterSelectionC1 = new PlayerSettingForm(P1.PlayerNo);
+            PlayerSettingForm CharacterSelectionC1 = new PlayerSettingForm(P1);
             CharacterSelectionC1.Show();
             
         }
@@ -44,13 +44,18 @@ namespace NCGAME_V1._0
 
         private void Player2_Button_Click(object sender, EventArgs e)
         {
-            P2.Name = textBox1.Text;
-            Player2_Button.Text = P2.Name;
+            PlayerSettingForm CharacterSelectionC2 = new PlayerSettingForm(P2);
+            CharacterSelectionC2.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Map_Button_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = P1.Name;
         }
     }
 }
