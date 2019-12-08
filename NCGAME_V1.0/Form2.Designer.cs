@@ -1,6 +1,6 @@
 ﻿namespace NCGAME_V1._0
 {
-    partial class CharacterSelectionForm
+    partial class PlayerSettingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -116,7 +116,7 @@
             this.PlayerNo_Label.TabIndex = 7;
             this.PlayerNo_Label.Text = "PlayerNo";
             // 
-            // CharacterSelectionForm
+            // PlayerSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,8 +129,9 @@
             this.Controls.Add(this.Warrior_RadioButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Name_TextBox);
-            this.Name = "CharacterSelectionForm";
-            this.Text = "CharacterSelection";
+            this.Name = "PlayerSettingForm";
+            this.Text = "PlayerSetting";
+            this.Load += new System.EventHandler(this.CharacterSelectionForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

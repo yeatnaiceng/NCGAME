@@ -12,4 +12,4 @@ C:\Users\User\Documents\Visual Studio 2019\Projects\NCGAME_V1.0\NCGAME_V1.0\bin\
 C:\Users\User\Documents\Visual Studio 2019\Projects\NCGAME_V1.0\NCGAME_V1.0\obj\Debug\Interop.WMPLib.dll
 C:\Users\User\Documents\Visual Studio 2019\Projects\NCGAME_V1.0\NCGAME_V1.0\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\User\Documents\Visual Studio 2019\Projects\NCGAME_V1.0\NCGAME_V1.0\obj\Debug\NCGAME_V1.0.csproj.ResolveComReference.cache
-C:\Users\User\Documents\Visual Studio 2019\Projects\NCGAME_V1.0\NCGAME_V1.0\obj\Debug\NCGAME_V1._0.CharacterSelectionForm.resources
+C:\Users\User\Documents\Visual Studio 2019\Projects\NCGAME_V1.0\NCGAME_V1.0\obj\Debug\NCGAME_V1._0.PlayerSettingForm.resources
