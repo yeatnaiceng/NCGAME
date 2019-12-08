@@ -108,8 +108,13 @@ namespace NCGAME_V1._0
                 MessageBox.Show("Player 1 Please Choose Your Character");
                 return;
             }
-            if (P1.CharacterChosen.CharacterName == "魔法使い")
+            if (P1.CharacterChosen is Magician)
                 CharacterSkillSound.URL = "エクスぷローション.wav";
+            else if (P1.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "Detroit Smash.wav";
+            else if (P1.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "雷遁・麒麟.m4a";
+            
         }
 
         private void StartGame_Button_Click(object sender, EventArgs e)
@@ -132,11 +137,15 @@ namespace NCGAME_V1._0
         {
             if (P1.CharacterChosen == null)
             {
-                MessageBox.Show("Player 1 Please Choose Your Character");
+                MessageBox.Show("Player 2 Please Choose Your Character");
                 return;
             }
-            if (P1.CharacterChosen.CharacterName == "魔法使い")
+            if (P2.CharacterChosen is Magician)
                 CharacterSkillSound.URL = "エクスぷローション.wav";
+            else if (P2.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "Detroit Smash.wav";
+            else if (P2.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "雷遁・麒麟.m4a";
         }
 
         private void Player2_CharacterS1Voice_Button_Click(object sender, EventArgs e)

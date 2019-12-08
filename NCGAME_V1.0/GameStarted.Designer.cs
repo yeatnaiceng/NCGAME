@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameStartedForm));
             this.Player1_LifePointBar = new System.Windows.Forms.ProgressBar();
             this.Player2_LifePointBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,6 +55,14 @@
             this.Player2_Skill2_Button = new System.Windows.Forms.Button();
             this.Player2_Skill3_Button = new System.Windows.Forms.Button();
             this.EndTurn_Button = new System.Windows.Forms.Button();
+            this.Player1_Move_Button = new System.Windows.Forms.Button();
+            this.Player2_Move_Button = new System.Windows.Forms.Button();
+            this.Direction_Label = new System.Windows.Forms.Label();
+            this.Movement_Label = new System.Windows.Forms.Label();
+            this.AttackStep_Label = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.Round_Label = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // Player1_LifePointBar
@@ -144,7 +153,7 @@
             // 
             this.Map_Panel.Location = new System.Drawing.Point(257, 139);
             this.Map_Panel.Name = "Map_Panel";
-            this.Map_Panel.Size = new System.Drawing.Size(500, 500);
+            this.Map_Panel.Size = new System.Drawing.Size(670, 670);
             this.Map_Panel.TabIndex = 14;
             // 
             // Player1_Up_Button
@@ -165,6 +174,7 @@
             this.Player2_Up_Button.TabIndex = 16;
             this.Player2_Up_Button.Text = "Up";
             this.Player2_Up_Button.UseVisualStyleBackColor = true;
+            this.Player2_Up_Button.Click += new System.EventHandler(this.Player2_Up_Button_Click);
             // 
             // Player1_Left_Button
             // 
@@ -184,6 +194,7 @@
             this.Player2_Down_Button.TabIndex = 18;
             this.Player2_Down_Button.Text = "Down";
             this.Player2_Down_Button.UseVisualStyleBackColor = true;
+            this.Player2_Down_Button.Click += new System.EventHandler(this.Player2_Down_Button_Click);
             // 
             // Player2_Left_Button
             // 
@@ -193,6 +204,7 @@
             this.Player2_Left_Button.TabIndex = 19;
             this.Player2_Left_Button.Text = "Left";
             this.Player2_Left_Button.UseVisualStyleBackColor = true;
+            this.Player2_Left_Button.Click += new System.EventHandler(this.Player2_Left_Button_Click);
             // 
             // Player1_Right_Button
             // 
@@ -222,6 +234,7 @@
             this.Player2_Right_Button.TabIndex = 22;
             this.Player2_Right_Button.Text = "Right";
             this.Player2_Right_Button.UseVisualStyleBackColor = true;
+            this.Player2_Right_Button.Click += new System.EventHandler(this.Player2_Right_Button_Click);
             // 
             // Player1_Skill1_Button
             // 
@@ -241,6 +254,7 @@
             this.Player1_Skill2_Button.TabIndex = 24;
             this.Player1_Skill2_Button.Text = "Skill 2";
             this.Player1_Skill2_Button.UseVisualStyleBackColor = true;
+            this.Player1_Skill2_Button.Click += new System.EventHandler(this.Player1_Skill2_Button_Click);
             // 
             // Player1_Skill3_Button
             // 
@@ -250,6 +264,7 @@
             this.Player1_Skill3_Button.TabIndex = 25;
             this.Player1_Skill3_Button.Text = "Skill 3";
             this.Player1_Skill3_Button.UseVisualStyleBackColor = true;
+            this.Player1_Skill3_Button.Click += new System.EventHandler(this.Player1_Skill3_Button_Click);
             // 
             // Player2_Skill1_Button
             // 
@@ -259,6 +274,7 @@
             this.Player2_Skill1_Button.TabIndex = 26;
             this.Player2_Skill1_Button.Text = "Skill 1";
             this.Player2_Skill1_Button.UseVisualStyleBackColor = true;
+            this.Player2_Skill1_Button.Click += new System.EventHandler(this.Player2_Skill1_Button_Click);
             // 
             // Player2_Skill2_Button
             // 
@@ -268,6 +284,7 @@
             this.Player2_Skill2_Button.TabIndex = 27;
             this.Player2_Skill2_Button.Text = "Skill 2";
             this.Player2_Skill2_Button.UseVisualStyleBackColor = true;
+            this.Player2_Skill2_Button.Click += new System.EventHandler(this.Player2_Skill2_Button_Click);
             // 
             // Player2_Skill3_Button
             // 
@@ -277,6 +294,7 @@
             this.Player2_Skill3_Button.TabIndex = 28;
             this.Player2_Skill3_Button.Text = "Skill 3";
             this.Player2_Skill3_Button.UseVisualStyleBackColor = true;
+            this.Player2_Skill3_Button.Click += new System.EventHandler(this.Player2_Skill3_Button_Click);
             // 
             // EndTurn_Button
             // 
@@ -286,12 +304,87 @@
             this.EndTurn_Button.TabIndex = 29;
             this.EndTurn_Button.Text = "End Turn";
             this.EndTurn_Button.UseVisualStyleBackColor = true;
+            this.EndTurn_Button.Click += new System.EventHandler(this.EndTurn_Button_Click);
+            // 
+            // Player1_Move_Button
+            // 
+            this.Player1_Move_Button.Location = new System.Drawing.Point(64, 269);
+            this.Player1_Move_Button.Name = "Player1_Move_Button";
+            this.Player1_Move_Button.Size = new System.Drawing.Size(141, 37);
+            this.Player1_Move_Button.TabIndex = 30;
+            this.Player1_Move_Button.Text = "Move";
+            this.Player1_Move_Button.UseVisualStyleBackColor = true;
+            this.Player1_Move_Button.Click += new System.EventHandler(this.Player1_Move_Button_Click);
+            // 
+            // Player2_Move_Button
+            // 
+            this.Player2_Move_Button.Location = new System.Drawing.Point(995, 269);
+            this.Player2_Move_Button.Name = "Player2_Move_Button";
+            this.Player2_Move_Button.Size = new System.Drawing.Size(141, 37);
+            this.Player2_Move_Button.TabIndex = 31;
+            this.Player2_Move_Button.Text = "Move";
+            this.Player2_Move_Button.UseVisualStyleBackColor = true;
+            this.Player2_Move_Button.Click += new System.EventHandler(this.Player2_Move_Button_Click);
+            // 
+            // Direction_Label
+            // 
+            this.Direction_Label.AutoSize = true;
+            this.Direction_Label.Location = new System.Drawing.Point(285, 50);
+            this.Direction_Label.Name = "Direction_Label";
+            this.Direction_Label.Size = new System.Drawing.Size(72, 17);
+            this.Direction_Label.TabIndex = 32;
+            this.Direction_Label.Text = "Direction :";
+            // 
+            // Movement_Label
+            // 
+            this.Movement_Label.AutoSize = true;
+            this.Movement_Label.Location = new System.Drawing.Point(472, 9);
+            this.Movement_Label.Name = "Movement_Label";
+            this.Movement_Label.Size = new System.Drawing.Size(85, 17);
+            this.Movement_Label.TabIndex = 33;
+            this.Movement_Label.Text = "Movement : ";
+            // 
+            // AttackStep_Label
+            // 
+            this.AttackStep_Label.AutoSize = true;
+            this.AttackStep_Label.Location = new System.Drawing.Point(472, 45);
+            this.AttackStep_Label.Name = "AttackStep_Label";
+            this.AttackStep_Label.Size = new System.Drawing.Size(92, 17);
+            this.AttackStep_Label.TabIndex = 34;
+            this.AttackStep_Label.Text = "Attack Step : ";
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(743, 105);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 35;
+            // 
+            // Round_Label
+            // 
+            this.Round_Label.AutoSize = true;
+            this.Round_Label.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Round_Label.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Round_Label.Location = new System.Drawing.Point(716, 9);
+            this.Round_Label.Name = "Round_Label";
+            this.Round_Label.Size = new System.Drawing.Size(64, 19);
+            this.Round_Label.TabIndex = 36;
+            this.Round_Label.Text = "Round : ";
             // 
             // GameStartedForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1211, 651);
+            this.ClientSize = new System.Drawing.Size(1242, 849);
+            this.Controls.Add(this.Round_Label);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Controls.Add(this.AttackStep_Label);
+            this.Controls.Add(this.Movement_Label);
+            this.Controls.Add(this.Direction_Label);
+            this.Controls.Add(this.Player2_Move_Button);
+            this.Controls.Add(this.Player1_Move_Button);
             this.Controls.Add(this.EndTurn_Button);
             this.Controls.Add(this.Player2_Skill3_Button);
             this.Controls.Add(this.Player2_Skill2_Button);
@@ -321,6 +414,7 @@
             this.Name = "GameStartedForm";
             this.Text = "GameStarted";
             this.Load += new System.EventHandler(this.GameStartedForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +447,12 @@
         private System.Windows.Forms.Button Player2_Skill2_Button;
         private System.Windows.Forms.Button Player2_Skill3_Button;
         private System.Windows.Forms.Button EndTurn_Button;
+        private System.Windows.Forms.Button Player1_Move_Button;
+        private System.Windows.Forms.Button Player2_Move_Button;
+        private System.Windows.Forms.Label Direction_Label;
+        private System.Windows.Forms.Label Movement_Label;
+        private System.Windows.Forms.Label AttackStep_Label;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private System.Windows.Forms.Label Round_Label;
     }
 }

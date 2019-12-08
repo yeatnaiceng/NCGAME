@@ -29,12 +29,16 @@ namespace NCGAME_V1._0
 		}
 		public override void Skill1(List<AnimatedObject> AnmObj, Player player, string Direction)
 		{
+			if (player.Mp < 30)
+				return;
 			player.Mp -= 30;
 			player.CharacterChosen.PhysicalAttackMax += 10;
 			player.CharacterChosen.PhysicalAttackMin += 10;
 		}
 		public override void Skill2(List<AnimatedObject> AnmObj, Player player, string Direction)
 		{
+			if (player.Mp < 20)
+				return;
 			player.Mp -= 20;
 			player.CharacterChosen.Mobility += 5;
 		}
@@ -43,16 +47,18 @@ namespace NCGAME_V1._0
 			int X;
 			int Y;
 			int damage;
-
+			if (player.Mp < 100)
+				return;
+			player.Mp -= 100;
 			if (Direction == "Up")
 			{
 				X = player.X;
-				Y = player.Y + 1;
+				Y = player.Y - 1;
 			}
 			else if (Direction == "Down")
 			{
 				X = player.X;
-				Y = player.Y - 1;
+				Y = player.Y + 1;
 			}
 			else if (Direction == "Left")
 			{

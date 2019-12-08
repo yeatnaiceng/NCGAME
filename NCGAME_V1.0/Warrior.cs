@@ -29,6 +29,8 @@ namespace NCGAME_V1._0
 		}
 		public override void Skill1(List<AnimatedObject> AnmObj, Player player, string Direction)
 		{
+			if (player.Mp < 20)
+				return;
 			player.Mp -= 20;
 			int x_1, y_1;
 			int x_2, y_2;
@@ -40,18 +42,18 @@ namespace NCGAME_V1._0
 				x_1 = player.X - 1;
 				x_2 = player.X;
 				x_3 = player.X + 1;
-				y_1 = player.Y + 1;
-				y_2 = player.Y + 1;
-				y_3 = player.Y + 1;
+				y_1 = player.Y - 1;
+				y_2 = player.Y - 1;
+				y_3 = player.Y - 1;
 			}
 			else if (Direction == "Down")
 			{
 				x_1 = player.X - 1;
 				x_2 = player.X;
 				x_3 = player.X + 1;
-				y_1 = player.Y - 1;
-				y_2 = player.Y - 1;
-				y_3 = player.Y - 1;
+				y_1 = player.Y + 1;
+				y_2 = player.Y + 1;
+				y_3 = player.Y + 1;
 			}
 			else if (Direction == "Left")
 			{
@@ -103,6 +105,8 @@ namespace NCGAME_V1._0
 		}
 		public override void Skill2(List<AnimatedObject> AnmObj, Player player, string Direction)
 		{
+			if (player.Mp < 30)
+				return;
 			player.Mp -= 30;
 			player.CharacterChosen.PhysicalDefenseMax = 500;
 			player.CharacterChosen.PhysicalDefenseMin = 500;
@@ -115,6 +119,8 @@ namespace NCGAME_V1._0
 			int[] Y = new int[9];
 			int index = 0;
 			int damage;
+			if (player.Mp < 80)
+				return;
 			player.Mp -= 80;
 			//Set Attack Range
 			for (int a = 0; a < 3; a++)
@@ -124,12 +130,12 @@ namespace NCGAME_V1._0
 					if (Direction == "Up")
 					{
 						X[index] = (player.X - 1) + a;
-						Y[index] = (player.Y + 1) + b;
+						Y[index] = (player.Y - 1) - b;
 					}
 					else if (Direction == "Down")
 					{
 						X[index] = (player.X - 1) + a;
-						Y[index] = (player.Y - 1) - b;
+						Y[index] = (player.Y + 1) + b;
 					}
 					else if (Direction == "Left")
 					{

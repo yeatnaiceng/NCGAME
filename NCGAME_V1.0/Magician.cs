@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NCGAME_V1._0
 {
@@ -33,6 +34,8 @@ namespace NCGAME_V1._0
 			int distance = 5;
 			int[] X = new int[distance];
 			int[] Y = new int[distance];
+			if (player.Mp < 40)
+				return;
 			player.Mp -= 40;
 			//Set Attack Range
 			if (Direction == "Up")
@@ -40,7 +43,7 @@ namespace NCGAME_V1._0
 				for (int a = 0; a < distance; a++)
 				{
 					X[a] = player.X;
-					Y[a] = player.Y + (a + 1);
+					Y[a] = player.Y - (a + 1);
 				}
 			}
 			else if (Direction == "Down")
@@ -48,7 +51,7 @@ namespace NCGAME_V1._0
 				for (int a = 0; a < distance; a++)
 				{
 					X[a] = player.X;
-					Y[a] = player.Y - (a + 1);
+					Y[a] = player.Y + (a + 1);
 				}
 			}
 			else if (Direction == "Right")
@@ -101,11 +104,11 @@ namespace NCGAME_V1._0
 		public override void Skill2(List<AnimatedObject> AnmObj, Player player, string Direction)
 		{
 			int X_Dest, Y_Dest;
+			if (player.Mp < 50)
+				return;
 			player.Mp -= 50;
-			X_Dest = int.Parse(Console.ReadLine());
-			Y_Dest = int.Parse(Console.ReadLine());
-			player.X = X_Dest;
-			player.Y = Y_Dest;
+			
+			
 		}
 		public override void Skill3(List<AnimatedObject> AnmObj, Player player, string Direction)
 		{
@@ -113,6 +116,8 @@ namespace NCGAME_V1._0
 			int[] y = new int[25];
 			int index = 0;
 
+			if (player.Mp < 300)
+				return;
 			player.Mp -= 300;
 
 			for (int a = 0; a < 5; a++)
