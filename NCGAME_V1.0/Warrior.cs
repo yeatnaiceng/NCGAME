@@ -29,6 +29,8 @@ namespace NCGAME_V1._0
 		}
 		public override void Skill1(List<AnimatedObject> AnmObj, Player player, string Direction)
 		{
+			List<int> xDelete = new List<int>();
+			List<int> yDelete = new List<int>();
 			if (player.Mp < 20)
 				return;
 			player.Mp -= 20;
@@ -95,7 +97,19 @@ namespace NCGAME_V1._0
 					else if (a is Bomb)
 					{
 						Bomb b = a as Bomb;
+						xDelete.Add(b.X);
+						yDelete.Add(b.Y);
 						b.Explode(AnmObj);
+					}
+				}
+			}
+			for (int a = 0; a < AnmObj.Count; a++)
+			{
+				for (int b = 0; b < xDelete.Count; b++)
+				{
+					if (AnmObj[a].X == xDelete[b] && AnmObj[a].Y == yDelete[b])
+					{
+						AnmObj.RemoveAt(a);
 					}
 				}
 			}
@@ -105,6 +119,8 @@ namespace NCGAME_V1._0
 		}
 		public override void Skill2(List<AnimatedObject> AnmObj, Player player, string Direction)
 		{
+			List<int> xDelete = new List<int>();
+			List<int> yDelete = new List<int>();
 			if (player.Mp < 30)
 				return;
 			player.Mp -= 30;
@@ -117,6 +133,8 @@ namespace NCGAME_V1._0
 		{
 			int[] X = new int[9];
 			int[] Y = new int[9];
+			List<int> xDelete = new List<int>();
+			List<int> yDelete = new List<int>();
 			int index = 0;
 			int damage;
 			if (player.Mp < 80)
@@ -176,8 +194,20 @@ namespace NCGAME_V1._0
 						else if (b is Bomb)
 						{
 							Bomb c = b as Bomb;
+							xDelete.Add(c.X);
+							yDelete.Add(c.Y);
 							c.Explode(AnmObj);
 						}
+					}
+				}
+			}
+			for (int a = 0; a < AnmObj.Count; a++)
+			{
+				for (int b = 0; b < xDelete.Count; b++)
+				{
+					if (AnmObj[a].X == xDelete[b] && AnmObj[a].Y == yDelete[b])
+					{
+						AnmObj.RemoveAt(a);
 					}
 				}
 			}

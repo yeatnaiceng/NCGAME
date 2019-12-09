@@ -162,8 +162,23 @@ namespace NCGAME_V1._0
                 }
             }
         }
+        public void DeleteObstacle()
+        {
+            for(int a=0;a<_animatedObjects.Count;a++)
+            {
+                if(_animatedObjects[a] is Obstacle)
+                {
+                    Obstacle b = _animatedObjects[a] as Obstacle;
+                    if(b.Hp<=0)
+                    {
+                        _animatedObjects.RemoveAt(a);
+                    }
+                }
+            }
+        }
         public void Print()
         {
+            DeleteObstacle();
             Map_Panel.Controls.Clear();
             btnGrid = new Button[_map.XSize, _map.YSize];
              int buttonSize = Map_Panel.Width / _map.XSize;
@@ -306,6 +321,12 @@ namespace NCGAME_V1._0
             }
             _p1.CharacterChosen.Skill1(_animatedObjects, _p1, _direction);
             _attackstep -= 1;
+            if (_p1.CharacterChosen is Magician)
+                CharacterSkillSound.URL = "火遁・炎弾.wav";
+            else if (_p1.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "普通なパンチ.wav";
+            else if (_p1.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "力上げる.mp3";
             Print();
         }
 
@@ -327,7 +348,7 @@ namespace NCGAME_V1._0
                         return;
                     }
                 }
-                _p1.Y -= 1;
+              
             }
             else if (_direction == "Left")
             {
@@ -339,7 +360,7 @@ namespace NCGAME_V1._0
                         return;
                     }
                 }
-                _p1.X -= 1;
+              
             }
             else if (_direction == "Right")
             {
@@ -351,7 +372,6 @@ namespace NCGAME_V1._0
                         return;
                     }
                 }
-                _p1.X += 1;
             }
             else
             {
@@ -363,8 +383,9 @@ namespace NCGAME_V1._0
                         return;
                     }
                 }
-                _p1.Y += 1;
+               
             }
+            _p1.Move(_direction, _map);
             _movement -= 1;
             Print();
         }
@@ -378,6 +399,12 @@ namespace NCGAME_V1._0
             }
             _p1.CharacterChosen.Skill2(_animatedObjects, _p1, _direction);
             _attackstep -= 1;
+            if (_p1.CharacterChosen is Magician)
+                CharacterSkillSound.URL = "瞬間移動.mp3";
+            else if (_p1.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "絶対防御.mp3";
+            else if (_p1.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "スピードアップ.mp3";
             Print();
         }
 
@@ -388,14 +415,15 @@ namespace NCGAME_V1._0
                 MessageBox.Show("Attack Step Finish!");
                 return;
             }
+            
+            _p1.CharacterChosen.Skill3(_animatedObjects, _p1, _direction);
+            _attackstep -= 1;
             if (_p1.CharacterChosen is Magician)
                 CharacterSkillSound.URL = "エクスぷローション.wav";
             else if (_p1.CharacterChosen is Warrior)
                 CharacterSkillSound.URL = "Detroit Smash.wav";
             else if (_p1.CharacterChosen is Ninja)
                 CharacterSkillSound.URL = "雷遁・麒麟.m4a";
-            _p1.CharacterChosen.Skill3(_animatedObjects, _p1, _direction);
-            _attackstep -= 1;
             Print();
         }
 
@@ -448,7 +476,7 @@ namespace NCGAME_V1._0
                         return;
                     }
                 }
-                _p2.Y -= 1;
+                
             }
             else if (_direction == "Left")
             {
@@ -460,7 +488,7 @@ namespace NCGAME_V1._0
                         return;
                     }
                 }
-                _p2.X -= 1;
+                
             }
             else if (_direction == "Right")
             {
@@ -472,7 +500,7 @@ namespace NCGAME_V1._0
                         return;
                     }
                 }
-                _p2.X += 1;
+              
             }
             else
             {
@@ -484,8 +512,9 @@ namespace NCGAME_V1._0
                         return;
                     }
                 }
-                _p2.Y += 1;
+               
             }
+            _p2.Move(_direction, _map);
             _movement -= 1;
             Print();
         }
@@ -523,6 +552,12 @@ namespace NCGAME_V1._0
             }
             _p2.CharacterChosen.Skill1(_animatedObjects, _p2, _direction);
             _attackstep -= 1;
+            if (_p2.CharacterChosen is Magician)
+                CharacterSkillSound.URL = "火遁・炎弾.wav";
+            else if (_p2.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "普通なパンチ.wav";
+            else if (_p2.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "力上げる.mp3";
             Print();
         }
 
@@ -535,6 +570,12 @@ namespace NCGAME_V1._0
             }
             _p2.CharacterChosen.Skill2(_animatedObjects, _p2, _direction);
             _attackstep -= 1;
+            if (_p2.CharacterChosen is Magician)
+                CharacterSkillSound.URL = "瞬間移動.mp3";
+            else if (_p2.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "絶対防御.mp3";
+            else if (_p2.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "スピードアップ.mp3";
             Print();
         }
 

@@ -52,8 +52,6 @@ namespace NCGAME_V1._0
 					}
 				}
 			}
-
-		//	AnmObj.Remove(this);
 			
 			
 		}

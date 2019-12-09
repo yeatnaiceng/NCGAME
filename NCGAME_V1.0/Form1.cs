@@ -96,9 +96,13 @@ namespace NCGAME_V1._0
                 MessageBox.Show("Player 1 Please Choose Your Character");
                 return;
             }
-            if (P1.CharacterChosen.CharacterName == "魔法使い")
-                CharacterSkillSound.URL= "火遁・炎弾.wav";
-            
+            if (P1.CharacterChosen is Magician)
+                CharacterSkillSound.URL = "火遁・炎弾.wav";
+            else if (P1.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "普通なパンチ.wav";
+            else if (P1.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "力上げる.mp3";
+
         }
 
         private void Player1_CharacterS3Voice_Button_Click(object sender, EventArgs e)
@@ -135,7 +139,7 @@ namespace NCGAME_V1._0
 
         private void Player2_CharacterS3Voice_Button_Click(object sender, EventArgs e)
         {
-            if (P1.CharacterChosen == null)
+            if (P2.CharacterChosen == null)
             {
                 MessageBox.Show("Player 2 Please Choose Your Character");
                 return;
@@ -150,13 +154,48 @@ namespace NCGAME_V1._0
 
         private void Player2_CharacterS1Voice_Button_Click(object sender, EventArgs e)
         {
+            if (P2.CharacterChosen == null)
+            {
+                MessageBox.Show("Player 2 Please Choose Your Character");
+                return;
+            }
+            if (P2.CharacterChosen is Magician)
+                CharacterSkillSound.URL = "火遁・炎弾.wav";
+            else if (P2.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "普通なパンチ.wav";
+            else if (P2.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "力上げる.mp3";
+        }
+
+        private void Player1_CharacterS2Voice_Button_Click(object sender, EventArgs e)
+        {
             if (P1.CharacterChosen == null)
             {
                 MessageBox.Show("Player 1 Please Choose Your Character");
                 return;
             }
-            if (P1.CharacterChosen.CharacterName == "魔法使い")
-                CharacterSkillSound.URL = "火遁・炎弾.wav";
+            if (P1.CharacterChosen is Magician)
+                CharacterSkillSound.URL = "瞬間移動.mp3";
+            else if (P1.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "絶対防御.mp3";
+            else if (P1.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "スピードアップ.mp3";
+        }
+
+        private void Player2_CharacterS2Voice_Button_Click(object sender, EventArgs e)
+        {
+            if (P2.CharacterChosen == null)
+            {
+                MessageBox.Show("Player 2 Please Choose Your Character");
+                return;
+            }
+            if (P2.CharacterChosen is Magician)
+                CharacterSkillSound.URL = "瞬間移動.mp3";
+            else if (P2.CharacterChosen is Warrior)
+                CharacterSkillSound.URL = "絶対防御.mp3";
+            else if (P2.CharacterChosen is Ninja)
+                CharacterSkillSound.URL = "スピードアップ.mp3";
+
         }
     }
 }

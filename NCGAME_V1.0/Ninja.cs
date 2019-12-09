@@ -46,6 +46,8 @@ namespace NCGAME_V1._0
 		{
 			int X;
 			int Y;
+			List<int> xDelete=new List<int>();
+			List<int> yDelete = new List<int>();
 			int damage;
 			if (player.Mp < 100)
 				return;
@@ -92,10 +94,25 @@ namespace NCGAME_V1._0
 					else if (a is Bomb)
 					{
 						Bomb b = a as Bomb;
+						xDelete.Add(a.X);
+						yDelete.Add(a.Y);
 						b.Explode(AnmObj);
 					}
 				}
 			}
+			
+			for(int a=0;a<AnmObj.Count;a++)
+			{
+				for (int b = 0; b < xDelete.Count; b++)
+				{
+					if (AnmObj[a].X == xDelete[b]&&AnmObj[a].Y==yDelete[b])
+					{ 
+						AnmObj.RemoveAt(a);
+					}
+				} 
+			}
+			
+
 		}
 
 	}

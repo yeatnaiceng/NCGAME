@@ -102,23 +102,35 @@ namespace NCGAME_V1._0
 		public void Defence()
 		{
 		}
-		public void Move(string Direction)
+		public void Move(string Direction,Maps maps)
 		{
 			if (Direction == "Up")
 			{
-				_y += 1;
+				if ((_y - 1) < 1)
+					return;
+				else
+					_y -= 1;
 			}
 			else if (Direction == "Down")
 			{
-				_y -= 1;
+				if ((_y + 1) >maps.YSize)
+					return;
+				else
+					_y += 1;
 			}
 			else if (Direction == "Right")
 			{
-				_x += 1;
+				if ((_x + 1) > maps.XSize)
+					return;
+				else
+					_x += 1;
 			}
 			else if (Direction == "Left")
 			{
-				_x -= 1;
+				if ((_x - 1) < 1)
+					return;
+				else
+					_x -= 1;
 			}
 		}
 		public void GetBuff()

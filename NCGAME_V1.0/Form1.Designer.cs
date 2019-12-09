@@ -236,6 +236,7 @@
             this.Player1_CharacterS2Voice_Button.TabIndex = 19;
             this.Player1_CharacterS2Voice_Button.Text = "Skill 2";
             this.Player1_CharacterS2Voice_Button.UseVisualStyleBackColor = true;
+            this.Player1_CharacterS2Voice_Button.Click += new System.EventHandler(this.Player1_CharacterS2Voice_Button_Click);
             // 
             // Player2_CharacterS2Voice_Button
             // 
@@ -245,6 +246,7 @@
             this.Player2_CharacterS2Voice_Button.TabIndex = 20;
             this.Player2_CharacterS2Voice_Button.Text = "Skill 2";
             this.Player2_CharacterS2Voice_Button.UseVisualStyleBackColor = true;
+            this.Player2_CharacterS2Voice_Button.Click += new System.EventHandler(this.Player2_CharacterS2Voice_Button_Click);
             // 
             // Player1_CharacterS3Voice_Button
             // 
