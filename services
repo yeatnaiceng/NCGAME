@@ -34,7 +34,13 @@
 
 <body style="font-family: 'Open Sans', sans-serif;">
 
- 
+  <!-- Preloader -->
+  <div class="loader-mask">
+    <div class="loader">
+      "Loading..."
+    </div>
+  </div>
+
   <header class="nav-type-2">
     
     <nav class="navbar navbar-static-top">
@@ -629,6 +635,11 @@
 
   </div> <!-- end main-wrapper -->
   
+  <!-- jQuery Scripts -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
 </html>
